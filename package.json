@@ -12,5 +12,8 @@
     "weather"
   ],
   "author": "Pavlo Petrenko",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.5"
+  }
 }
