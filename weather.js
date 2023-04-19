@@ -18,6 +18,21 @@ const saveToken = async (token) => {
     }
 };
 
+const getForecast = async () => {
+    try {
+        const weather = await getWeather('Kyiv');
+        console.log(weather);
+    } catch (e) {
+        if (e.response?.status === 404) {
+            printError('Wrong city');
+        } else if (e.response?.status === 401) {
+            printError('Wrong token');
+        } else {
+            printError(e.message);
+        }
+    }
+};
+
 const initCLI = () => {
     const args = getArgs(process.argv);
     if (args.h) {
@@ -33,9 +48,7 @@ const initCLI = () => {
         // save token
         return saveToken(args.t);
     }
-    // getWeather('Kyiv');
-    // show weather
-    console.log('show weather');
+    getForecast();
 };
 
 initCLI();
