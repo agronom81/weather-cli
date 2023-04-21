@@ -30,7 +30,7 @@ export const printWeather = (res) => {
     console.log(
         dedent(`${chalk.bgYellow(' WEATHER ')}
         Weather in ${res.name}
-        ${icon} ${res.weather[0].description}
+        ${icon}  ${res.weather[0].description}
         ${iconTemp}  Temperature: ${res.main.temp} (feels like ${res.main.feels_like})
         ${humidityIcon} Humidity: ${res.main.humidity}%
         ${windIcon} Wind speed: ${res.wind.speed}
